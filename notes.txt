@@ -1,0 +1,21 @@
+mango db does not require you to spifiy the data type not the reltionships between them and also it stores data into something called document and collations
+not into tables as mysql and RD systems and its an NoSQL database so thats that
+mango does not store data in tables and rows and like that, NoSQL databases e.g.. MangoDB stores data in collection of document , document are very similur to javascript Object and thier type is called BSON its very similar to JSON Object but with added data types
+in MangoDB , databases is just like the normal MYSQL databases;
+but to store info you need to create a collection , collection is similar to a table, which you can hold in to it multiple documents of data
+all documents on MangoDB must have a _ID which is object id,its kind og the same of primary key in SQL databases
+so to create a database in MangoDB you use the comment user <database> ,(note that a database well only be created when you create a collection)
+
+TO insert a document into the collection you use the following command
+db.<collection>.insert(BSON_OBJECT);
+e.g..
+test.student.insert({
+  name:'abobker',
+  avg:90,
+  id_number:171069
+})
+so as shown above MangoDB does not follow a strict table model like SQL databases, you can just insert a object into the collection and thats it! no resrections what so ever , the type just need to be a BSON and that all
+and to insert multiple documents you need to user the command
+db.<collection>.insertMany(ARRAY OF BSON_OBJECTS);
+
+to query from one of the collections you use the fucntion find();
